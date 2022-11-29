@@ -1,13 +1,13 @@
-# CORETO TRUST PERFORMANCE LEDGER
+# CORETO DRT API
 
 > Interact with the Coreto Trust and Performance Ledger using a simple REST API.
 
 ---
 
 ## Docs
-[Coreto DRT API](https://github.com/coreto-io/coreto-drt-api/blob/master/docs/swagger.md)
-[Coreto DID Smart Contract](https://github.com/coreto-io/coreto-did-smart-contract/blob/master/README.md)
-[Coreto DRT Smart Contract](https://github.com/coreto-io/coreto-did-smart-contract/blob/master/README.md)
+- [Coreto DRT API](https://github.com/coreto-io/coreto-drt-api/blob/master/docs/swagger.md)
+- [Coreto DID Smart Contract](https://github.com/coreto-io/coreto-did-smart-contract/blob/master/README.md)
+- [Coreto DRT Smart Contract](https://github.com/coreto-io/coreto-did-smart-contract/blob/master/README.md)
 
 ---
 
