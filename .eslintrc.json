@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": "plugin:@hapi/recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "no-console": "error",
+    "no-debugger": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true
+      }
+    ],
+    "operator-linebreak": ["error", "after"],
+    "semi": ["error", "always", {
+      "omitLastInOneLineBlock": true
+    }],
+    "@hapi/scope-start": ["off"]
+  }
+}

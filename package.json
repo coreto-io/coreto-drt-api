@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "coreto-tp-ledger-interface",
+  "version": "1.1.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "md-swagger": "swagger-markdown -i docs/swagger.json"
+  },
+  "dependencies": {
+    "@ceramicnetwork/http-client": "^2.3.0",
+    "@ceramicstudio/idx": "^0.12.2",
+    "@hapi/catbox-memory": "^5.0.1",
+    "@hapi/eslint-plugin": "^6.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^7.0.0",
+    "@hapi/vision": "^7.0.0",
+    "body-parser": "~1.19.0",
+    "dids": "^3.2.0",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.20.0",
+    "fs": "*",
+    "hapi": "^17.8.5",
+    "hapi-swagger": "^14.5.5",
+    "joi": "^17.6.0",
+    "key-did-provider-ed25519": "^2.0.1",
+    "key-did-resolver": "^2.0.5",
+    "near-api-js": "~0.44.1",
+    "near-cli": "^2.2.0",
+    "near-seed-phrase": "^0.1.0",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

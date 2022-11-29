@@ -1,0 +1,927 @@
+{
+	"swagger":"2.0",
+	"host":"localhost:4000",
+	"basePath":"/",
+	"schemes":[
+		"http"
+	],
+	"info":{
+		"title":"Coreto Trust and Performance Ledger API Documentation",
+		"version":"0.0.1",
+		"description":"An API used to interact with the Coreto Trust and Performance Ledger"
+	},
+	"tags":[
+
+	],
+	"paths":{
+		"/current_block_height":{
+			"get":{
+				"summary":"Current block height",
+				"operationId":"getCurrent_block_height",
+				"description":"Get the current block height from the blockchain",
+				"tags":[
+					"current_block_height"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/balance/{account_id}":{
+			"get":{
+				"summary":"Balance",
+				"operationId":"getBalanceAccount_id",
+				"description":"Get the balance of an account",
+				"parameters":[
+					{
+						"type":"string",
+						"description":"The NEAR account ID of the user",
+						"name":"account_id",
+						"in":"path",
+						"required":true
+					}
+				],
+				"tags":[
+					"balance"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/call":{
+			"post":{
+				"summary":"Call",
+				"operationId":"postCall",
+				"description":"Perform a call action on a smart contract",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Call%20payload"
+						}
+					}
+				],
+				"tags":[
+					"call"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/view":{
+			"post":{
+				"summary":"View",
+				"operationId":"postView",
+				"description":"Perform a view action on a smart contract",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/View%20payload"
+						}
+					}
+				],
+				"tags":[
+					"view"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/did/create_did":{
+			"post":{
+				"summary":"Create DID",
+				"operationId":"postDidCreate_did",
+				"description":"Generate a new DID based to a NEAR wallet",
+				"tags":[
+					"did"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"$ref":"#/definitions/Create%20DID%20response"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/did/get_did":{
+			"post":{
+				"summary":"Get DID",
+				"operationId":"postDidGet_did",
+				"description":"Get the DID from the DID registry",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%2FHas%20DID%20payload"
+						}
+					}
+				],
+				"tags":[
+					"did"
+				],
+				"responses":{
+					"200":{
+						"description":"The DID associated with the NEAR account ID",
+						"schema":{
+							"type":"string",
+							"description":"The DID associated with the NEAR account ID"
+						}
+					},
+					"400":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/did/has_did":{
+			"post":{
+				"summary":"Has DID",
+				"operationId":"postDidHas_did",
+				"description":"Check if a NEAR account has an associated DID",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%2FHas%20DID%20payload"
+						}
+					}
+				],
+				"tags":[
+					"did"
+				],
+				"responses":{
+					"200":{
+						"description":"Boolean value indicating if the NEAR account has an associated DID",
+						"schema":{
+							"type":"boolean",
+							"description":"Boolean value indicating if the NEAR account has an associated DID"
+						}
+					},
+					"400":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/did/put_did":{
+			"post":{
+				"summary":"Put DID",
+				"operationId":"postDidPut_did",
+				"description":"Add the DID into the DID registry",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Put%20DID%20payload"
+						}
+					}
+				],
+				"tags":[
+					"did"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"$ref":"#/definitions/Transaction%20response"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/did/transfer_did":{
+			"post":{
+				"summary":"Transfer DID",
+				"operationId":"postDidTransfer_did",
+				"description":"Transfer the DID to another wallet",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Transfer%20DID%20payload"
+						}
+					}
+				],
+				"tags":[
+					"did"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"$ref":"#/definitions/Transaction%20response"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/get_source_action_types":{
+			"post":{
+				"summary":"Get source action types",
+				"operationId":"postLedgerGet_source_action_types",
+				"description":"Get a list of action types submitted by a source.",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%20source%20action%20types%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/get_user_actions":{
+			"post":{
+				"summary":"Get user actions",
+				"operationId":"postLedgerGet_user_actions",
+				"description":"Get all actions done by a user submitted by a source",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%20user%20actions%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/get_user_performance_actions":{
+			"post":{
+				"summary":"Get user performance actions",
+				"operationId":"postLedgerGet_user_performance_actions",
+				"description":"Get all actions, that modifies the performance, done by a user submitted by a source",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%20user%20actions%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/get_user_trust_actions":{
+			"post":{
+				"summary":"Get user trust actions",
+				"operationId":"postLedgerGet_user_trust_actions",
+				"description":"Get all actions, that modifies the trust, done by a user submitted by a source",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Get%20user%20actions%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"type":"string"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/save_action":{
+			"post":{
+				"summary":"Save action",
+				"operationId":"postLedgerSave_action",
+				"description":"Save an action made by a user",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Save%20action%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"$ref":"#/definitions/Transaction%20response"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		},
+		"/ledger/save_actions_batch":{
+			"post":{
+				"summary":"Save actions batch",
+				"operationId":"postLedgerSave_actions_batch",
+				"description":"Save a batch of actions from one source",
+				"parameters":[
+					{
+						"in":"body",
+						"name":"body",
+						"schema":{
+							"$ref":"#/definitions/Save%20actions%20batch%20payload"
+						}
+					}
+				],
+				"tags":[
+					"ledger"
+				],
+				"responses":{
+					"200":{
+						"schema":{
+							"$ref":"#/definitions/Transaction%20response"
+						},
+						"description":"Successful"
+					},
+					"400":{
+						"schema":{
+							"$ref":"#/definitions/Smart%20contract%20error%20response"
+						},
+						"description":"Bad Request"
+					},
+					"500":{
+						"schema":{
+							"$ref":"#/definitions/Internal%20server%20error%20response"
+						},
+						"description":"Internal Server Error"
+					}
+				}
+			}
+		}
+	},
+	"definitions":{
+		"Smart contract error response":{
+			"type":"object",
+			"properties":{
+				"error":{
+					"type":"string",
+					"description":"The error resulted from the smart contract"
+				},
+				"type":{
+					"type":"string",
+					"description":"The error type resulted from the smart contract"
+				}
+			}
+		},
+		"Internal server error response":{
+			"type":"object",
+			"properties":{
+				"error":{
+					"type":"string",
+					"description":"The error resulted from the server"
+				},
+				"statusCode":{
+					"type":"number",
+					"description":"The error status code resulted from the server"
+				},
+				"message":{
+					"type":"string",
+					"description":"The error message resulted from the server"
+				}
+			}
+		},
+		"params":{
+			"type":"object",
+			"description":"The payload to send to the method"
+		},
+		"Call payload":{
+			"type":"object",
+			"properties":{
+				"account_id":{
+					"type":"string",
+					"description":"The NEAR account ID that will be performing the call"
+				},
+				"private_key":{
+					"type":"string",
+					"description":"The private key of the account id"
+				},
+				"contract":{
+					"type":"string",
+					"description":"The NEAR account ID of contract"
+				},
+				"method":{
+					"type":"string",
+					"description":"The method name to call"
+				},
+				"params":{
+					"$ref":"#/definitions/params"
+				},
+				"attached_gas":{
+					"type":"string",
+					"description":"The amount of gas you will be attaching to the call in TGas"
+				},
+				"attached_tokens":{
+					"type":"string",
+					"description":"The amount of tokens to be sent to the contract you are calling in yoctoNEAR (10^-24 NEAR)"
+				}
+			},
+			"required":[
+				"account_id",
+				"private_key",
+				"contract",
+				"method",
+				"params",
+				"attached_gas",
+				"attached_tokens"
+			]
+		},
+		"View payload":{
+			"type":"object",
+			"properties":{
+				"contract":{
+					"type":"string",
+					"description":"The NEAR account ID of contract"
+				},
+				"method":{
+					"type":"string",
+					"description":"The method name to call"
+				},
+				"params":{
+					"$ref":"#/definitions/params"
+				}
+			},
+			"required":[
+				"contract",
+				"method",
+				"params"
+			]
+		},
+		"Create DID response":{
+			"type":"object",
+			"properties":{
+				"did":{
+					"type":"string",
+					"description":"The DID generated"
+				},
+				"seed":{
+					"type":"string",
+					"description":"The seed used to generate the DID"
+				}
+			}
+		},
+		"Get/Has DID payload":{
+			"type":"object",
+			"properties":{
+				"account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the DID owner"
+				}
+			},
+			"required":[
+				"account_id"
+			]
+		},
+		"Put DID payload":{
+			"type":"object",
+			"properties":{
+				"caller_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the caller"
+				},
+				"caller_private_key":{
+					"type":"string",
+					"description":"The NEAR private key of the caller"
+				},
+				"account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the DID owner"
+				},
+				"did":{
+					"type":"string",
+					"description":"The DID to be added"
+				}
+			},
+			"required":[
+				"caller_account_id",
+				"caller_private_key",
+				"account_id",
+				"did"
+			]
+		},
+		"Transaction response":{
+			"type":"object",
+			"properties":{
+				"hash":{
+					"type":"string",
+					"description":"The hash of the completed transaction"
+				}
+			}
+		},
+		"Transfer DID payload":{
+			"type":"object",
+			"properties":{
+				"caller_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the caller"
+				},
+				"caller_private_key":{
+					"type":"string",
+					"description":"The NEAR private key of the caller"
+				},
+				"old_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the DID owner"
+				},
+				"new_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the new DID owner"
+				}
+			},
+			"required":[
+				"caller_account_id",
+				"caller_private_key",
+				"old_account_id",
+				"new_account_id"
+			]
+		},
+		"Get source action types payload":{
+			"type":"object",
+			"properties":{
+				"source":{
+					"type":"string",
+					"description":"The NEAR account ID of the source"
+				}
+			},
+			"required":[
+				"source"
+			]
+		},
+		"Get user actions payload":{
+			"type":"object",
+			"properties":{
+				"source_label":{
+					"type":"string",
+					"description":"The label of the source that submitted the actions"
+				},
+				"account_did":{
+					"type":"string",
+					"description":"The DID of the user"
+				}
+			},
+			"required":[
+				"source_label",
+				"account_did"
+			]
+		},
+		"Save action payload":{
+			"type":"object",
+			"properties":{
+				"caller_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the caller"
+				},
+				"caller_private_key":{
+					"type":"string",
+					"description":"The NEAR private key of the caller"
+				},
+				"account_did":{
+					"type":"string",
+					"description":"The DID of the account"
+				},
+				"action_date":{
+					"type":"string",
+					"format":"date",
+					"description":"The unix timestamp of the action"
+				},
+				"action_type":{
+					"type":"string",
+					"description":"The type of the action"
+				},
+				"trust":{
+					"type":"number",
+					"description":"The trust variation value of the action"
+				},
+				"performance":{
+					"type":"number",
+					"description":"The performance variation value of the action"
+				},
+				"identifier":{
+					"type":"string",
+					"x-alternatives":[
+						{
+							"type":"string"
+						},
+						{
+							"type":"number"
+						}
+					]
+				}
+			},
+			"required":[
+				"caller_account_id",
+				"caller_private_key",
+				"account_did",
+				"action_date",
+				"action_type",
+				"trust",
+				"performance"
+			]
+		},
+		"Save actions batch item":{
+			"type":"object",
+			"properties":{
+				"account_did":{
+					"type":"string",
+					"description":"The DID of the account"
+				},
+				"action_date":{
+					"type":"string",
+					"format":"date",
+					"description":"The unix timestamp of the action"
+				},
+				"action_type":{
+					"type":"string",
+					"description":"The type of the action"
+				},
+				"trust":{
+					"type":"number",
+					"description":"The trust variation value of the action"
+				},
+				"performance":{
+					"type":"number",
+					"description":"The performance variation value of the action"
+				},
+				"identifier":{
+					"type":"string",
+					"x-alternatives":[
+						{
+							"type":"string"
+						},
+						{
+							"type":"number"
+						}
+					]
+				}
+			},
+			"required":[
+				"account_did",
+				"action_date",
+				"action_type",
+				"trust",
+				"performance"
+			]
+		},
+		"batch":{
+			"type":"array",
+			"items":{
+				"$ref":"#/definitions/Save%20actions%20batch%20item"
+			}
+		},
+		"Save actions batch payload":{
+			"type":"object",
+			"properties":{
+				"caller_account_id":{
+					"type":"string",
+					"description":"The NEAR account ID of the caller"
+				},
+				"caller_private_key":{
+					"type":"string",
+					"description":"The NEAR private key of the caller"
+				},
+				"batch":{
+					"$ref":"#/definitions/batch"
+				}
+			},
+			"required":[
+				"caller_account_id",
+				"caller_private_key",
+				"batch"
+			]
+		}
+	}
+}
