@@ -6,9 +6,9 @@
 		"http"
 	],
 	"info":{
-		"title":"Coreto Trust and Performance Ledger API Documentation",
+		"title":"Coreto DRT API Documentation",
 		"version":"0.0.1",
-		"description":"An API used to interact with the Coreto Trust and Performance Ledger"
+		"description":"An API used to interact with the Coreto DRT"
 	},
 	"tags":[
 
@@ -349,10 +349,10 @@
 				}
 			}
 		},
-		"/ledger/get_source_action_types":{
+		"/drt/get_source_action_types":{
 			"post":{
 				"summary":"Get source action types",
-				"operationId":"postLedgerGet_source_action_types",
+				"operationId":"postDrtGet_source_action_types",
 				"description":"Get a list of action types submitted by a source.",
 				"parameters":[
 					{
@@ -364,7 +364,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{
@@ -388,10 +388,10 @@
 				}
 			}
 		},
-		"/ledger/get_user_actions":{
+		"/drt/get_user_actions":{
 			"post":{
 				"summary":"Get user actions",
-				"operationId":"postLedgerGet_user_actions",
+				"operationId":"postDrtGet_user_actions",
 				"description":"Get all actions done by a user submitted by a source",
 				"parameters":[
 					{
@@ -403,7 +403,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{
@@ -427,10 +427,10 @@
 				}
 			}
 		},
-		"/ledger/get_user_performance_actions":{
+		"/drt/get_user_performance_actions":{
 			"post":{
 				"summary":"Get user performance actions",
-				"operationId":"postLedgerGet_user_performance_actions",
+				"operationId":"postDrtGet_user_performance_actions",
 				"description":"Get all actions, that modifies the performance, done by a user submitted by a source",
 				"parameters":[
 					{
@@ -442,7 +442,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{
@@ -466,10 +466,10 @@
 				}
 			}
 		},
-		"/ledger/get_user_trust_actions":{
+		"/drt/get_user_trust_actions":{
 			"post":{
 				"summary":"Get user trust actions",
-				"operationId":"postLedgerGet_user_trust_actions",
+				"operationId":"postDrtGet_user_trust_actions",
 				"description":"Get all actions, that modifies the trust, done by a user submitted by a source",
 				"parameters":[
 					{
@@ -481,7 +481,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{
@@ -505,10 +505,10 @@
 				}
 			}
 		},
-		"/ledger/save_action":{
+		"/drt/save_action":{
 			"post":{
 				"summary":"Save action",
-				"operationId":"postLedgerSave_action",
+				"operationId":"postDrtSave_action",
 				"description":"Save an action made by a user",
 				"parameters":[
 					{
@@ -520,7 +520,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{
@@ -544,10 +544,10 @@
 				}
 			}
 		},
-		"/ledger/save_actions_batch":{
+		"/drt/save_actions_batch":{
 			"post":{
 				"summary":"Save actions batch",
-				"operationId":"postLedgerSave_actions_batch",
+				"operationId":"postDrtSave_actions_batch",
 				"description":"Save a batch of actions from one source",
 				"parameters":[
 					{
@@ -559,7 +559,7 @@
 					}
 				],
 				"tags":[
-					"ledger"
+					"drt"
 				],
 				"responses":{
 					"200":{

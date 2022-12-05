@@ -1,5 +1,5 @@
-# Coreto Trust and Performance Ledger API Documentation
-An API used to interact with the Coreto Trust and Performance Ledger
+# Coreto DRT API Documentation
+An API used to interact with the Coreto DRT
 
 ## Version: 0.0.1
 
@@ -216,7 +216,7 @@ Transfer the DID to another wallet
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/get_source_action_types
+### /drt/get_source_action_types
 
 #### POST
 ##### Summary
@@ -241,7 +241,7 @@ Get a list of action types submitted by a source.
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/get_user_actions
+### /drt/get_user_actions
 
 #### POST
 ##### Summary
@@ -266,7 +266,7 @@ Get all actions done by a user submitted by a source
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/get_user_performance_actions
+### /drt/get_user_performance_actions
 
 #### POST
 ##### Summary
@@ -291,7 +291,7 @@ Get all actions, that modifies the performance, done by a user submitted by a so
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/get_user_trust_actions
+### /drt/get_user_trust_actions
 
 #### POST
 ##### Summary
@@ -316,7 +316,7 @@ Get all actions, that modifies the trust, done by a user submitted by a source
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/save_action
+### /drt/save_action
 
 #### POST
 ##### Summary
@@ -341,7 +341,7 @@ Save an action made by a user
 | 400 | Bad Request | [Smart%20contract%20error%20response](#smart%20contract%20error%20response) |
 | 500 | Internal Server Error | [Internal%20server%20error%20response](#internal%20server%20error%20response) |
 
-### /ledger/save_actions_batch
+### /drt/save_actions_batch
 
 #### POST
 ##### Summary

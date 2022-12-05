@@ -1,6 +1,6 @@
-# CORETO TRUST PERFORMANCE LEDGER
+# CORETO DRT
 
-> Interact with the Coreto Trust and Performance Ledger using a simple REST API.
+> Interact with the Coreto DRT using a simple REST API.
 
 ---
 
