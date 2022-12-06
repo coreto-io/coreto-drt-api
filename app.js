@@ -30,9 +30,9 @@ const init = async () => {
 
     const swaggerOptions = {
         info: {
-            title: 'Coreto Trust and Performance Ledger API Documentation',
+            title: 'Coreto DRT API Documentation',
             // eslint-disable-next-line max-len
-            description: 'An API used to interact with the Coreto Trust and Performance Ledger',
+            description: 'An API used to interact with the Coreto DRT',
             version: process.env.APP_VERSION
         }
     };
@@ -51,7 +51,7 @@ const init = async () => {
         path: '/',
         handler: () => {
             return api.notify(
-                'Welcome to Coreto Trust and Performance Ledger API! '
+                'Welcome to Coreto DRT API! '
             );
         }
     });
@@ -60,7 +60,7 @@ const init = async () => {
         method: 'GET',
         path: '/about',
         handler: () => {
-            return 'Coreto Trust and Performance Ledger API';
+            return 'Coreto DRT API';
         }
     });
 
@@ -68,7 +68,7 @@ const init = async () => {
 
     await server.register(
         ledgerRoutes,
-        { routes: { prefix: '/ledger' } }
+        { routes: { prefix: '/drt' } }
     );
 
     await server.register(

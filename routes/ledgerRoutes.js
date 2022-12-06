@@ -12,7 +12,7 @@ import {
 } from './joiModels.js';
 
 export default {
-    name: 'ledger',
+    name: 'drt',
     register(server) {
         server.route({
             method: 'POST',
